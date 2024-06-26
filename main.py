@@ -3,32 +3,39 @@ from selenium.webdriver.common.keys import Keys
 import time
 import datetime
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 
 start = datetime.datetime.now()
 print('Время старта: ' + str(start))
 driver = webdriver.Firefox()
 options = webdriver.FirefoxOptions()
-wait = WebDriverWait(driver, 5, 0.1)
+wait = WebDriverWait(driver, 15, 0.1)
+log_locator = ('id', 'index_email')
 
 
 def auth(login, password):
-    log = driver.find_element('id', 'index_email')
-    time.sleep(2)
-    log.clear()
-    log.send_keys(login)
-    log.send_keys(Keys.ENTER)  # Ввели логин и переходим на следующую страницу для ввода пароля
-    time.sleep(10)
+    try:
+        log = wait.until(EC.presence_of_element_located(log_locator))  # Поле для ввода логина
+        log.clear()
+        log.send_keys(login)
+        log.send_keys(Keys.ENTER)  # Ввели логин и переходим на следующую страницу для ввода пароля
+    except TimeoutException:
+        print(f'Ошибка авторизации логина, {TimeoutException}')
+    time.sleep(5)
     if len(driver.find_elements('xpath', '//span[@class="vkuiButton__in"]')) < 1:
-        return False
-    alternative_auth = driver.find_element('xpath', '//span[@class="vkuiButton__in"]')  # Находим кнопку
-    # для выбора способа входа
+        return False    # Проверяем, можно ли войти по паролю
+    alternative_auth = wait.until(EC.element_to_be_clickable(driver.find_element('xpath', '//span['
+                                                                                          '@class="vkuiButton__in"]')))
+    # Находим кнопку для выбора способа входа
     alternative_auth.click()
     time.sleep(3)
     if len(driver.find_elements('xpath', '//div[@data-test-id="verificationMethod_password"]')) < 1:
         return False
-    psw_button = driver.find_element('xpath', '//div[@data-test-id="verificationMethod_password"]')
-    psw_button.click()
-    time.sleep(3)
+    psw_button = wait.until(EC.element_to_be_clickable(driver.find_element('xpath', '//div[@data-test-id'
+                                                                                    '="verificationMethod_password"]')))
+    # Ждём, когда станет активной кнопка "пароль"
+    psw_button.click()  # Переходим на страницу ввода пароля
     psw = driver.find_element('xpath', '//input[@name="password"]')
     psw.send_keys(password)
     psw.send_keys(Keys.ENTER)
@@ -71,7 +78,7 @@ def dialog_checker(id):
         page_scroll()
         time.sleep(3)
         page_scroll()
-        print(f"{j}/{dialog_len} COMPLETE")
+        print(f"{j + 1}/{dialog_len} COMPLETE")
     output_file.close()
 
 
