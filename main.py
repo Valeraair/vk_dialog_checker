@@ -42,7 +42,7 @@ def page_scroll():
         # Прокрутка вниз
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         # Пауза, пока загрузится страница.
-        time.sleep(2)
+        time.sleep(5)
         # Вычисляем новую высоту прокрутки и сравниваем с последней высотой прокрутки.
         new_height = driver.execute_script("return document.body.scrollHeight")
         if new_height == last_height:
@@ -54,7 +54,10 @@ def dialog_checker(id):
     dialog_len = len(driver.find_elements('xpath', '//div[@class="nim-dialog--name"]'))
     output_file = open(f'{id} all chats.txt', 'a+')
     for j in range(dialog_len):
-        driver.find_elements('xpath', '//div[@class="nim-dialog--name"]')[j].click()    # Начали шерстить беседы
+        dialog_len_chek = len(driver.find_elements('xpath', '//div[@class="nim-dialog--name"]'))
+        while dialog_len_chek < dialog_len:  # Проверяем, что отображаются все диалоги
+            page_scroll()
+        driver.find_elements('xpath', '//div[@class="nim-dialog--name"]')[j].click()  # Начали шерстить беседы
         time.sleep(5)
         dialog_link = driver.current_url
         dialog_head = driver.find_element('xpath', '//a[@class="im-page--title-main-inner _im_page_peer_name"]')
@@ -67,6 +70,8 @@ def dialog_checker(id):
         time.sleep(3)
         page_scroll()
         time.sleep(3)
+        page_scroll()
+        print(f"{j}/{dialog_len} COMPLETE")
     output_file.close()
 
 
@@ -84,6 +89,8 @@ with open('input.txt', 'r', encoding='utf-8') as input_data:  # Main script
         else:
             print(f'{lgn} AUTH COMPLETE')
             driver.get('https://vk.com/im')
+            time.sleep(5)
+            page_scroll()
             time.sleep(5)
             page_scroll()
             time.sleep(5)
