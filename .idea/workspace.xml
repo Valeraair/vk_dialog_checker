@@ -4,18 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d10ccd4f-5e43-4320-ab98-c704cda343eb" name="Changes" comment="v. 0.95">
-      <change afterPath="$PROJECT_DIR$/79212054414 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/79216301966 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/79276392158 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/79296425740 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/79585454658 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/79630435253 all chats.txt" afterDir="false" />
+    <list default="true" id="d10ccd4f-5e43-4320-ab98-c704cda343eb" name="Changes" comment="v. 0.95.1">
+      <change afterPath="$PROJECT_DIR$/1. 79585454658 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10. 79219872435 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11. 79251166401 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/13. 79011011053 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14. 79363131027 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15. 79687544234 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16. 79309195474 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/17. 79285083544 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2. 79212054414 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/24. 79270190187 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3. 79276392158 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/38. 79263996505 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/39. 79154429732 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/4. 79630435253 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/40. 79999722365 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/41. 79154392406 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/43. 79869903585 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5. 79296425740 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6. 79362522560 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7. 79216301966 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8. 79869902172 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9. 79608283717 all chats.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/last_obj.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/last_acc.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/last_chat.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vk_checker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vk_checker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/last_obj.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +44,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Valeraair&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Valeraair/vk_dialog_checker.git&quot;,
+    &quot;accountId&quot;: &quot;d3b50650-018a-4f61-8f7c-c5632aa8ec53&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -44,8 +74,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager">
@@ -75,7 +104,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
       </set>
     </attachedChunks>
   </component>
@@ -89,17 +118,6 @@
       <updated>1719181974202</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
