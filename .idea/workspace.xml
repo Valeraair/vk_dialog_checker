@@ -4,36 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d10ccd4f-5e43-4320-ab98-c704cda343eb" name="Changes" comment="v. 0.95.1">
-      <change afterPath="$PROJECT_DIR$/1. 79585454658 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10. 79219872435 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/11. 79251166401 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/13. 79011011053 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14. 79363131027 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15. 79687544234 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16. 79309195474 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/17. 79285083544 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2. 79212054414 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/24. 79270190187 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3. 79276392158 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/38. 79263996505 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/39. 79154429732 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4. 79630435253 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/40. 79999722365 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/41. 79154392406 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/43. 79869903585 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5. 79296425740 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6. 79362522560 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/7. 79216301966 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/8. 79869902172 all chats.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9. 79608283717 all chats.txt" afterDir="false" />
+    <list default="true" id="d10ccd4f-5e43-4320-ab98-c704cda343eb" name="Changes" comment="v. 0.95.6">
+      <change afterPath="$PROJECT_DIR$/0. 79585454658 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1. 79212054414 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/12. 79687544234 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14. 79285083544 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15. 79614634589 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16. 79263925939 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/17. 79962657453 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/18. 79932409303 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2. 79276392158 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/24. 79251872335 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/25. 79175049272 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/26. 79266319128 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/27. 79251496967 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/28. 79154392404 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/29. 79219972871 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3. 79630435253 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/30. 79261776073 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/31. 79998432703 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/32. 79263996505 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/35. 79154392406 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/36. 79630408954 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/37. 79869903585 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/39. 79608219935 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/4. 79296425740 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5. 79216301966 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6. 79869902172 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/7. 79608283717 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8. 79219872435 all chats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/9. 79251166401 all chats.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/last_acc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/last_chat.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vk_checker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vk_checker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/last_obj.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/last_acc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/last_acc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/last_chat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/last_chat.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +108,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+        <option value="bundled-python-sdk-abccbe9d933a-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.20224.428" />
       </set>
     </attachedChunks>
   </component>
@@ -117,9 +121,20 @@
       <option name="presentableId" value="Default" />
       <updated>1719181974202</updated>
     </task>
+    <task id="LOCAL-00001" summary="v. 0.95.6">
+      <option name="closed" value="true" />
+      <created>1721526793045</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1721526793045</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="v. 0.95.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="v. 0.95.6" />
   </component>
 </project>

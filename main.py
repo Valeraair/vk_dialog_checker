@@ -7,8 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains as AC
 
-start = datetime.datetime.now()
-print('Время старта: ' + str(start))
+
 driver = webdriver.Firefox()
 action = AC(driver)
 options = webdriver.FirefoxOptions()
@@ -25,7 +24,10 @@ dialog_options_locator = ('xpath', '//div[@onmouseover="window.uiActionsMenu && 
 dialog_delete_history_locator = ('xpath', '//a[@class="ui_actions_menu_item im-action im-action_clear _im_action"]')
 dialog_delete_confirm_locator = ('xpath', '//button[@class="FlatButton FlatButton--primary FlatButton--size-m"]')
 chat_name_locator = ('xpath', '//h3[@class="ChatSettingsInfo__title"]')
-profile_menu_locator = ('xpath', '')
+profile_menu_locator = ('xpath', '//a[@id="top_profile_link"]')
+group_link_locator = ('xpath', '//ul[@class="List List--border ChatSettingsMenu"][1]'
+                               '//a[starts-with(@href, "/")][@class="Link"]')
+exit_button_locator = ('xpath', '//span[contains(text(), "Выйти")]')
 last_chat = open('last_chat.txt', 'r', encoding='utf-8')
 last_acc = open('last_acc.txt', 'r', encoding='utf-8')
 
@@ -80,26 +82,29 @@ def delete_invalid_chats():
     print(f'Диалогов к сканированию: {dialog_len}')
     for k in range(dialog_len - 1, 0, -1):
         page_scroll()
-        time.sleep(1)
+        time.sleep(0.5)
         page_scroll()
         try:
             driver.find_elements(*dialog_name_locator)[k].click()  # Начали шерстить беседы
         except:
             action.scroll_by_amount(0, -300)
-            action.pause(1)
+            action.pause(0.5)
             action.perform()
             driver.find_elements(*dialog_name_locator)[k].click()
-        time.sleep(1)
+        time.sleep(0.5)
         wait.until(EC.visibility_of_element_located(dialog_head_locator))
         chat_head = driver.find_element(*dialog_head_locator).text.lower()
-        if 'Чат ' not in driver.find_element(*dialog_head_locator).text and 'Двор ' not in driver.find_element(*dialog_head_locator).text and 'Проспект ' not in driver.find_element(*dialog_head_locator).text and 'Группа ' not in driver.find_element(*dialog_head_locator).text:    # Перемудрил. ПЕРЕПИСАТЬ ПО-ЧЕЛОВЕЧЕСКИ
-            time.sleep(5)
+        if 'Чат ' not in driver.find_element(*dialog_head_locator).text and 'Двор ' not in driver.find_element(
+                *dialog_head_locator).text and 'Проспект ' not in driver.find_element(
+                *dialog_head_locator).text and 'Группа ' not in driver.find_element(
+                *dialog_head_locator).text:  # Перемудрил. ПЕРЕПИСАТЬ ПО-ЧЕЛОВЕЧЕСКИ
+            time.sleep(2)
             action.move_to_element(driver.find_element(*dialog_options_locator))
-            action.pause(1)
+            action.pause(0.5)
             action.move_to_element(driver.find_element(*dialog_delete_history_locator))
-            action.pause(1)
+            action.pause(0.5)
             action.click()
-            action.pause(1)
+            action.pause(0.5)
             action.perform()
             wait.until(EC.element_to_be_clickable(dialog_delete_confirm_locator)).click()
             dialog_len -= 1
@@ -109,9 +114,10 @@ def delete_invalid_chats():
 
 
 def dialog_checker(id):
-    page_scroll()
-    time.sleep(1)
-    page_scroll()
+    for _ in range(170):
+        action.send_keys(Keys.ARROW_DOWN)
+        time.sleep(0.05)
+        action.perform()
     dialog_len = len(driver.find_elements(*dialog_name_locator))  # Находит количество бесед
     output_file = open(f'{i}. {id} all chats.txt', 'a+')
     try:
@@ -122,18 +128,25 @@ def dialog_checker(id):
         f = open('last_chat.txt', 'w')
         f.write(f'{j}')  # записываем текущие координаты, чтобы при перезапуске не выставлять их вручную
         f.close()
-        # dialog_len_check = len(driver.find_elements(*dialog_name_locator))
-        # while dialog_len_check < dialog_len:  # Проверяем, что отображаются все диалоги
-        #    page_scroll()  #ПОКА ЗАКОМЕНТИЛ, ТАК КАК УХОДИТ В ВЕЧНЫЙ ЦИКЛ
+        for _ in range(j):  # Пролистываем до того чата, который должны спарсить (чтобы всё загрузилось)
+            action.send_keys(Keys.ARROW_DOWN)
+            time.sleep(0.05)
+            action.perform()
+        while len(driver.find_elements(*dialog_name_locator)) < dialog_len:
+            for _ in range(10):  # Пролистываем чуть дальше (чтобы всё загрузилось)
+                action.send_keys(Keys.ARROW_DOWN)
+                time.sleep(0.01)
+                action.perform()
+        time.sleep(0.5)
         try:
             driver.find_elements(*dialog_name_locator)[j].click()  # Начали шерстить беседы
         except:
             action.scroll_by_amount(0, -300)
-            action.pause(1)
+            action.pause(0.5)
             action.perform()
             driver.find_elements(*dialog_name_locator)[j].click()
         dialog_link = driver.current_url
-        time.sleep(1)
+        time.sleep(0.5)
         wait.until(EC.visibility_of_element_located(dialog_head_locator)).click()
         try:
             chat_name = wait.until(EC.visibility_of_element_located(chat_name_locator))
@@ -142,19 +155,18 @@ def dialog_checker(id):
             time.sleep(3)
             wait.until(EC.visibility_of_element_located(dialog_head_locator)).click()
             chat_name = wait.until(EC.visibility_of_element_located(chat_name_locator))
-        output_file.write(f'{id}${dialog_link}${chat_name.text}\n')
-        time.sleep(1)
+        chat_group = driver.find_element(*group_link_locator).get_attribute('href')
+        output_file.write(f'{id}${dialog_link}${chat_name.text}${chat_group}\n')
+        time.sleep(0.5)
         driver.get('https://vk.com/im?tab=all')
-        time.sleep(1)
-        page_scroll()
-        time.sleep(1)
-        page_scroll()
         print(f"{j + 1}/{dialog_len} COMPLETE")
     output_file.close()
 
 
 def log_out():
-    pass
+    wait.until(EC.element_to_be_clickable(profile_menu_locator)).click()
+    wait.until(EC.element_to_be_clickable(exit_button_locator)).click()
+    time.sleep(2)
 
 
 with open('input.txt', 'r', encoding='utf-8') as input_data:  # Main script
@@ -168,25 +180,19 @@ with open('input.txt', 'r', encoding='utf-8') as input_data:  # Main script
         lgn = data[0]  # Логин для авторизации
         psw = data[1]  # Пароль для авторизации
         driver.get('https://vk.com/')  # Заходим на страницу с авторизацией
-        time.sleep(4)
         if not auth(lgn, psw):
             print(f'{lgn} Не удалось войти в аккаунт')
             continue
         else:
             print(f'{lgn} AUTH COMPLETE')
-            time.sleep(3)
             driver.get('https://vk.com/im')
-            page_scroll()
-            dialog_delete_flag = input('Проверять невалидные диалоги? (y/n) ')
-            time.sleep(1)
-            page_scroll()
-            time.sleep(1)
+            dialog_delete_flag = 'n'
             if dialog_delete_flag == 'y':
                 delete_invalid_chats()
                 driver.get('https://vk.com/im')
                 time.sleep(1)
-                page_scroll()
             dialog_checker(lgn)
+            log_out()
             driver.delete_all_cookies()
             v = open('last_chat.txt', 'w')
             v.write('0')
