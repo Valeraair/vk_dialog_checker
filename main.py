@@ -176,25 +176,22 @@ with open('input.txt', 'r', encoding='utf-8') as input_data:  # Main script
         f = open('last_acc.txt', 'w')
         f.write(f'{i}')  # записываем текущие координаты, чтобы при перезапуске не выставлять их вручную
         f.close()
-        data = full[i].split(';')
+        data = full[i].split(':')
         lgn = data[0]  # Логин для авторизации
         psw = data[1]  # Пароль для авторизации
         driver.get('https://vk.com/')  # Заходим на страницу с авторизацией
-        if not auth(lgn, psw):
-            print(f'{lgn} Не удалось войти в аккаунт')
-            continue
-        else:
-            print(f'{lgn} AUTH COMPLETE')
+        auth(lgn, psw)
+        print(f'{lgn} AUTH COMPLETE')
+        driver.get('https://vk.com/im')
+        dialog_delete_flag = 'n'
+        if dialog_delete_flag == 'y':
+            delete_invalid_chats()
             driver.get('https://vk.com/im')
-            dialog_delete_flag = 'n'
-            if dialog_delete_flag == 'y':
-                delete_invalid_chats()
-                driver.get('https://vk.com/im')
-                time.sleep(1)
-            dialog_checker(lgn)
-            log_out()
-            driver.delete_all_cookies()
-            v = open('last_chat.txt', 'w')
-            v.write('0')
-            v.close()
-            driver.get('https://vk.com/')
+            time.sleep(1)
+        dialog_checker(lgn)
+        log_out()
+        driver.delete_all_cookies()
+        v = open('last_chat.txt', 'w')
+        v.write('0')
+        v.close()
+        driver.get('https://vk.com/')
